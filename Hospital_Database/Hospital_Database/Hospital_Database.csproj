@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A597354-5A55-455F-A6DC-64417A3585D1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hospital_Database</RootNamespace>
+    <AssemblyName>Hospital_Database</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add Doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Doctor.Designer.cs">
+      <DependentUpon>Add Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Hospital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Hospital.Designer.cs">
+      <DependentUpon>Add Hospital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Manager.Designer.cs">
+      <DependentUpon>Add Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Nurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Nurse.Designer.cs">
+      <DependentUpon>Add Nurse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddXray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddXray.Designer.cs">
+      <DependentUpon>AddXray.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssignManagerToHospital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignManagerToHospital.Designer.cs">
+      <DependentUpon>AssignManagerToHospital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssignNurseToAHospital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignNurseToAHospital.Designer.cs">
+      <DependentUpon>AssignNurseToAHospital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assign_Doctor_Dep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assign_Doctor_Dep.Designer.cs">
+      <DependentUpon>Assign_Doctor_Dep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChronicDis_Addition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChronicDis_Addition.Designer.cs">
+      <DependentUpon>ChronicDis_Addition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller.cs" />
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBManager.cs" />
+    <Compile Include="Doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor.Designer.cs">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EncryptCode.cs" />
+    <Compile Include="ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HMDSDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMDSDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InfoUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoUpdate.Designer.cs">
+      <DependentUpon>InfoUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginScreen.Designer.cs">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medical Records.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medical Records.Designer.cs">
+      <DependentUpon>Medical Records.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medicine_Addition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medicine_Addition.Designer.cs">
+      <DependentUpon>Medicine_Addition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Patient.Designer.cs">
+      <DependentUpon>Add_Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nurse.Designer.cs">
+      <DependentUpon>Nurse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatAddComplaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatAddComplaint.Designer.cs">
+      <DependentUpon>PatAddComplaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient Prescription .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient Prescription .Designer.cs">
+      <DependentUpon>Patient Prescription .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient.Designer.cs">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatNo.Designer.cs">
+      <DependentUpon>PatNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registeration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registeration.Designer.cs">
+      <DependentUpon>Registeration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report FORdoctorNO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report FORdoctorNO.Designer.cs">
+      <DependentUpon>Report FORdoctorNO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportFORnurseNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportFORnurseNo.Designer.cs">
+      <DependentUpon>ReportFORnurseNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs">
+      <DependentUpon>Reports.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report_Addition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_Addition.Designer.cs">
+      <DependentUpon>Report_Addition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StoredProcedures.cs" />
+    <Compile Include="ValidationFunctions.cs" />
+    <Compile Include="XrayAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XrayAnalysis.Designer.cs">
+      <DependentUpon>XrayAnalysis.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Add Doctor.resx">
+      <DependentUpon>Add Doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Hospital.resx">
+      <DependentUpon>Add Hospital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Manager.resx">
+      <DependentUpon>Add Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Nurse.resx">
+      <DependentUpon>Add Nurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddXray.resx">
+      <DependentUpon>AddXray.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignManagerToHospital.resx">
+      <DependentUpon>AssignManagerToHospital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignNurseToAHospital.resx">
+      <DependentUpon>AssignNurseToAHospital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assign_Doctor_Dep.resx">
+      <DependentUpon>Assign_Doctor_Dep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChronicDis_Addition.resx">
+      <DependentUpon>ChronicDis_Addition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor.resx">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoUpdate.resx">
+      <DependentUpon>InfoUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginScreen.resx">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medical Records.resx">
+      <DependentUpon>Medical Records.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medicine_Addition.resx">
+      <DependentUpon>Medicine_Addition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Patient.resx">
+      <DependentUpon>Add_Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nurse.resx">
+      <DependentUpon>Nurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatAddComplaint.resx">
+      <DependentUpon>PatAddComplaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient Prescription .resx">
+      <DependentUpon>Patient Prescription .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient.resx">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatNo.resx">
+      <DependentUpon>PatNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Registeration.resx">
+      <DependentUpon>Registeration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report FORdoctorNO.resx">
+      <DependentUpon>Report FORdoctorNO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="Report7.rdlc" />
+    <EmbeddedResource Include="Report8.rdlc" />
+    <EmbeddedResource Include="Report9.rdlc" />
+    <EmbeddedResource Include="ReportFORnurseNo.resx">
+      <DependentUpon>ReportFORnurseNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_Addition.resx">
+      <DependentUpon>Report_Addition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XrayAnalysis.resx">
+      <DependentUpon>XrayAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet.xsc">
+      <DependentUpon>HMDSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet.xss">
+      <DependentUpon>HMDSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet1.xsc">
+      <DependentUpon>HMDSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet1.xss">
+      <DependentUpon>HMDSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet10.xsc">
+      <DependentUpon>HMDSDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet10.xss">
+      <DependentUpon>HMDSDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet11.xsc">
+      <DependentUpon>HMDSDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet11.xss">
+      <DependentUpon>HMDSDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet12.xsc">
+      <DependentUpon>HMDSDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet12.xss">
+      <DependentUpon>HMDSDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet13.xsc">
+      <DependentUpon>HMDSDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet13.xss">
+      <DependentUpon>HMDSDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet14.xsc">
+      <DependentUpon>HMDSDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet14.xss">
+      <DependentUpon>HMDSDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet15.xsc">
+      <DependentUpon>HMDSDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet15.xss">
+      <DependentUpon>HMDSDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet16.xsc">
+      <DependentUpon>HMDSDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet16.xss">
+      <DependentUpon>HMDSDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet17.xsc">
+      <DependentUpon>HMDSDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet17.xss">
+      <DependentUpon>HMDSDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet2.xsc">
+      <DependentUpon>HMDSDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet2.xss">
+      <DependentUpon>HMDSDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet3.xsc">
+      <DependentUpon>HMDSDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet3.xss">
+      <DependentUpon>HMDSDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet4.xsc">
+      <DependentUpon>HMDSDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet4.xss">
+      <DependentUpon>HMDSDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet5.xsc">
+      <DependentUpon>HMDSDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet5.xss">
+      <DependentUpon>HMDSDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet6.xsc">
+      <DependentUpon>HMDSDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet6.xss">
+      <DependentUpon>HMDSDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet7.xsc">
+      <DependentUpon>HMDSDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet7.xss">
+      <DependentUpon>HMDSDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet8.xsc">
+      <DependentUpon>HMDSDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet8.xss">
+      <DependentUpon>HMDSDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet9.xsc">
+      <DependentUpon>HMDSDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="HMDSDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HMDSDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HMDSDataSet9.xss">
+      <DependentUpon>HMDSDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reports.xsc">
+      <DependentUpon>Reports.xsd</DependentUpon>
+    </None>
+    <None Include="Reports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Reports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports.xss">
+      <DependentUpon>Reports.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Reports" targetNamespace="http://tempuri.org/Reports.xsd" xmlns:mstns="http://tempuri.org/Reports.xsd" xmlns="http://tempuri.org/Reports.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HMDSConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HMDSConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Hospital_Database.Properties.Settings.GlobalReference.Default.HMDSConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HospitalTableAdapter" GeneratorDataComponentClassName="HospitalTableAdapter" Name="Hospital" UserDataComponentName="HospitalTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HMDSConnectionString1 (Settings)" DbObjectName="HMDS.dbo.Hospital" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(*) as NumberOfNurses,H_ID,H.Name
+from Nurse AS N join Hospital AS H on Hos_ID=H_ID
+Group by H_ID,H.Name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NumberOfNurses" DataSetColumn="NumberOfNurses" />
+              <Mapping SourceColumn="H_ID" DataSetColumn="H_ID" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Hospital1TableAdapter" GeneratorDataComponentClassName="Hospital1TableAdapter" Name="Hospital1" UserDataComponentName="Hospital1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HMDSConnectionString1 (Settings)" DbObjectName="HMDS.dbo.Hospital" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(*)AS NumberOfDoctors,H_ID,H.Name
+FROM (Doctor join Doc_Works_on on Doc_SSN=D_SSN)join Hospital as H on H_ID=Hos_ID
+GROUP BY H_ID,H.Name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NumberOfDoctors" DataSetColumn="NumberOfDoctors" />
+              <Mapping SourceColumn="H_ID" DataSetColumn="H_ID" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Hospital2TableAdapter" GeneratorDataComponentClassName="Hospital2TableAdapter" Name="Hospital2" UserDataComponentName="Hospital2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HMDSConnectionString1 (Settings)" DbObjectName="HMDS.dbo.Hospital" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(*)AS NumberOfPatients,H_ID,H.Name
+FROM ((Medical_Record as M join MR_BelongsTo_Hos as N on M.MR_ID=N.MR_ID)join Patient on Pat_SSN=P_SSN)join Hospital as H on Hos_ID=H_ID 
+GROUP BY H_ID,H.Name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NumberOfPatients" DataSetColumn="NumberOfPatients" />
+              <Mapping SourceColumn="H_ID" DataSetColumn="H_ID" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Reports" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Reports" msprop:Generator_UserDSName="Reports">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Hospital" msprop:Generator_TableClassName="HospitalDataTable" msprop:Generator_TableVarName="tableHospital" msprop:Generator_TablePropName="Hospital" msprop:Generator_RowDeletingName="HospitalRowDeleting" msprop:Generator_RowChangingName="HospitalRowChanging" msprop:Generator_RowEvHandlerName="HospitalRowChangeEventHandler" msprop:Generator_RowDeletedName="HospitalRowDeleted" msprop:Generator_UserTableName="Hospital" msprop:Generator_RowChangedName="HospitalRowChanged" msprop:Generator_RowEvArgName="HospitalRowChangeEvent" msprop:Generator_RowClassName="HospitalRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NumberOfNurses" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNumberOfNurses" msprop:Generator_ColumnPropNameInRow="NumberOfNurses" msprop:Generator_ColumnPropNameInTable="NumberOfNursesColumn" msprop:Generator_UserColumnName="NumberOfNurses" type="xs:int" minOccurs="0" />
+              <xs:element name="H_ID" msprop:Generator_ColumnVarNameInTable="columnH_ID" msprop:Generator_ColumnPropNameInRow="H_ID" msprop:Generator_ColumnPropNameInTable="H_IDColumn" msprop:Generator_UserColumnName="H_ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Hospital1" msprop:Generator_TableClassName="Hospital1DataTable" msprop:Generator_TableVarName="tableHospital1" msprop:Generator_TablePropName="Hospital1" msprop:Generator_RowDeletingName="Hospital1RowDeleting" msprop:Generator_RowChangingName="Hospital1RowChanging" msprop:Generator_RowEvHandlerName="Hospital1RowChangeEventHandler" msprop:Generator_RowDeletedName="Hospital1RowDeleted" msprop:Generator_UserTableName="Hospital1" msprop:Generator_RowChangedName="Hospital1RowChanged" msprop:Generator_RowEvArgName="Hospital1RowChangeEvent" msprop:Generator_RowClassName="Hospital1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NumberOfDoctors" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNumberOfDoctors" msprop:Generator_ColumnPropNameInRow="NumberOfDoctors" msprop:Generator_ColumnPropNameInTable="NumberOfDoctorsColumn" msprop:Generator_UserColumnName="NumberOfDoctors" type="xs:int" minOccurs="0" />
+              <xs:element name="H_ID" msprop:Generator_ColumnVarNameInTable="columnH_ID" msprop:Generator_ColumnPropNameInRow="H_ID" msprop:Generator_ColumnPropNameInTable="H_IDColumn" msprop:Generator_UserColumnName="H_ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Hospital2" msprop:Generator_TableClassName="Hospital2DataTable" msprop:Generator_TableVarName="tableHospital2" msprop:Generator_TablePropName="Hospital2" msprop:Generator_RowDeletingName="Hospital2RowDeleting" msprop:Generator_RowChangingName="Hospital2RowChanging" msprop:Generator_RowEvHandlerName="Hospital2RowChangeEventHandler" msprop:Generator_RowDeletedName="Hospital2RowDeleted" msprop:Generator_UserTableName="Hospital2" msprop:Generator_RowChangedName="Hospital2RowChanged" msprop:Generator_RowEvArgName="Hospital2RowChangeEvent" msprop:Generator_RowClassName="Hospital2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NumberOfPatients" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNumberOfPatients" msprop:Generator_ColumnPropNameInRow="NumberOfPatients" msprop:Generator_ColumnPropNameInTable="NumberOfPatientsColumn" msprop:Generator_UserColumnName="NumberOfPatients" type="xs:int" minOccurs="0" />
+              <xs:element name="H_ID" msprop:Generator_ColumnVarNameInTable="columnH_ID" msprop:Generator_ColumnPropNameInRow="H_ID" msprop:Generator_ColumnPropNameInTable="H_IDColumn" msprop:Generator_UserColumnName="H_ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Hospital" />
+      <xs:field xpath="mstns:H_ID" />
+    </xs:unique>
+    <xs:unique name="Hospital1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Hospital1" />
+      <xs:field xpath="mstns:H_ID" />
+    </xs:unique>
+    <xs:unique name="Hospital2_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Hospital2" />
+      <xs:field xpath="mstns:H_ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
